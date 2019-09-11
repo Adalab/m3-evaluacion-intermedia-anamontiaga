@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACE,iBAAkB,CAClB,wBAA4B,CAC5B,QACF,CAEA,GACE,eACF","file":"main.a95acd79.chunk.css","sourcesContent":[".App {\n  text-align: center;\n  background-color: aquamarine;\n  margin: 0;\n}\n\nul {\n  list-style: none;\n}\n"]}
