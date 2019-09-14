@@ -1,5 +1,5 @@
 import React from "react";
-import "../index.css";
+import "../stylesheets/scss/Pokemon.scss";
 
 const Pokemon = props => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "../index.css";
+import "../stylesheets/scss/Pokelist.scss";
 import Pokemon from "./Pokemon";
 
 const Pokelist = props => {
