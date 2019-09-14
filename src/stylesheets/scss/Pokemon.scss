@@ -15,15 +15,18 @@
     padding: 5px;
     text-transform: capitalize;
   }
-  &--btns {
+  &--types--list {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: flex-start;
   }
-  &--btn {
+  &--type {
     border-radius: 5px;
     background-color: rgb(134, 125, 125);
     color: antiquewhite;
     margin: 10px 0 0 7px;
     text-align: left;
+    padding: 3px;
   }
 }
