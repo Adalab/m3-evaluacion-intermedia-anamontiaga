@@ -6,7 +6,7 @@ const Pokelist = props => {
   return (
     <ul className="pokemons--list">
       {props.cards.map((card, cardIndex) => (
-        <Pokemon url={card.url} name={card.name} types={card.types} />
+        <Pokemon url={card.url} name={card.name} types={card.types} cardIndex={cardIndex} />
       ))}
     </ul>
   );
