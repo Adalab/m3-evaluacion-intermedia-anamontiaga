@@ -9,42 +9,42 @@ class App extends React.Component {
     super();
     // initial state
     this.state = {
-      pokemons: []
+      pokemons: [],
+      favs: [],
+      filteredText: ""
+      // el valor del texto que pinto en el input
     };
+
+    this.handleFilter = this.handleFilter.bind(this);
+    this.selectFavorite = this.selectFavorite.bind(this);
     // get data and set in react state
     getDataFromServer().then(pokemons => {
       this.setState({ pokemons });
-      console.log(this.state);
     });
   }
 
-  render() {
-    console.log("Rendering...");
+  handleFilter(ev) {
+    this.setState({ filteredText: ev.target.value });
+  }
 
+  selectFavorite(event) {
+    const selectPokemon = event.currentTarget.id;
+    this.setState({ favs: this.state.favs.push(selectPokemon) });
+  }
+
+  render() {
+    const filteredPokemons = this.state.pokemons.filter(pokemon => {
+      return pokemon.name.includes(this.state.filteredText);
+    });
     return (
       <div className="App">
+        <label htmlFor="filter">Filtrar:</label>
+        <input type="text" onChange={this.handleFilter} />
         <h1 className="title">Mi lista de Pokemon</h1>
-        <Pokelist cards={this.state.pokemons} />
+        <Pokelist cards={filteredPokemons} actionToPerformOnPokelist={this.selectFavorite} />
       </div>
     );
   }
 }
-
-// class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       pokemons: dataPokemons
-//     };
-//   }
-//   render() {
-//     return (
-//       <div className="App">
-//         <h1 className="title">Mi lista de Pokemon</h1>
-//         <Pokelist cards={this.state.pokemons} />
-//       </div>
-//     );
-//   }
-// }
 
 export default App;
