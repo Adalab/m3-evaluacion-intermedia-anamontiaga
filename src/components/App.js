@@ -36,6 +36,7 @@ class App extends React.Component {
     const filteredPokemons = this.state.pokemons.filter(pokemon => {
       return pokemon.name.includes(this.state.filteredText);
     });
+
     return (
       <div className="App">
         <label htmlFor="filter">Filtrar:</label>
